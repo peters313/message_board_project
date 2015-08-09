@@ -10,7 +10,7 @@ router.post("/", function(req, res, next){
     });
 });
 
-router.delete("/:thedata", function(req, res, next){
+router.delete("/:data", function(req, res, next){
     Message.findByIdAndRemove(req.params.id, req.body, function(err, post){
         if(err){
             console.log("ERROR!!! : ", err);

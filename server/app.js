@@ -7,7 +7,7 @@ var app = express();
 var things = require('./routes/things');
 var index = require('./routes/index');
 
-var mongoURI = "mongodb://localhost:27017/messageboard_project";
+var mongoURI = "mongodb://localhost:27017/message_board_project";
 var mongoDB = mongoose.connect(mongoURI).connection;
 
 mongoDB.on('error', function(err){
@@ -22,7 +22,7 @@ mongoDB.once('open', function(){
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({expanded:true}));
+app.use(bodyParser.urlencoded({ extended:true }));
 
 app.set("port", (process.env.PORT || 5000));
 
